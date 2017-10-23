@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IsimAra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsimAraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsimAraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BolumAra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BolumAdi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BolumAraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BolumAraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TrafoAra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TrafoAdi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TrafoAraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TrafoAraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VeriGoster">
+        <s:complexType />
+      </s:element>
+      <s:element name="VeriGosterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VeriGosterResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VeriGoster2">
+        <s:complexType />
+      </s:element>
+      <s:element name="VeriGoster2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VeriGoster2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KisiEkle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdSoyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dahili1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dahili2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BolumAdi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KisiEkleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KisiEkleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KisiSil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dahiliID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KisiSilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="KisiSilResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KisiGuncelle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="adSoyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dahili1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dahili2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bolumAdi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dahiliID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KisiGuncelleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KisiGuncelleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TrafoEkle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Isim" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TelefonNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KodNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaxNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BirimAdi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TrafoEkleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TrafoEkleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TrafoSil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="trafoID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TrafoSilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TrafoSilResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TrafoGuncelle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="isim" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefonNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="kodNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paxNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="birimAdi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="trafoID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TrafoGuncelleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TrafoGuncelleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsimAraSoapIn">
+    <wsdl:part name="parameters" element="tns:IsimAra" />
+  </wsdl:message>
+  <wsdl:message name="IsimAraSoapOut">
+    <wsdl:part name="parameters" element="tns:IsimAraResponse" />
+  </wsdl:message>
+  <wsdl:message name="BolumAraSoapIn">
+    <wsdl:part name="parameters" element="tns:BolumAra" />
+  </wsdl:message>
+  <wsdl:message name="BolumAraSoapOut">
+    <wsdl:part name="parameters" element="tns:BolumAraResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrafoAraSoapIn">
+    <wsdl:part name="parameters" element="tns:TrafoAra" />
+  </wsdl:message>
+  <wsdl:message name="TrafoAraSoapOut">
+    <wsdl:part name="parameters" element="tns:TrafoAraResponse" />
+  </wsdl:message>
+  <wsdl:message name="VeriGosterSoapIn">
+    <wsdl:part name="parameters" element="tns:VeriGoster" />
+  </wsdl:message>
+  <wsdl:message name="VeriGosterSoapOut">
+    <wsdl:part name="parameters" element="tns:VeriGosterResponse" />
+  </wsdl:message>
+  <wsdl:message name="VeriGoster2SoapIn">
+    <wsdl:part name="parameters" element="tns:VeriGoster2" />
+  </wsdl:message>
+  <wsdl:message name="VeriGoster2SoapOut">
+    <wsdl:part name="parameters" element="tns:VeriGoster2Response" />
+  </wsdl:message>
+  <wsdl:message name="KisiEkleSoapIn">
+    <wsdl:part name="parameters" element="tns:KisiEkle" />
+  </wsdl:message>
+  <wsdl:message name="KisiEkleSoapOut">
+    <wsdl:part name="parameters" element="tns:KisiEkleResponse" />
+  </wsdl:message>
+  <wsdl:message name="KisiSilSoapIn">
+    <wsdl:part name="parameters" element="tns:KisiSil" />
+  </wsdl:message>
+  <wsdl:message name="KisiSilSoapOut">
+    <wsdl:part name="parameters" element="tns:KisiSilResponse" />
+  </wsdl:message>
+  <wsdl:message name="KisiGuncelleSoapIn">
+    <wsdl:part name="parameters" element="tns:KisiGuncelle" />
+  </wsdl:message>
+  <wsdl:message name="KisiGuncelleSoapOut">
+    <wsdl:part name="parameters" element="tns:KisiGuncelleResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrafoEkleSoapIn">
+    <wsdl:part name="parameters" element="tns:TrafoEkle" />
+  </wsdl:message>
+  <wsdl:message name="TrafoEkleSoapOut">
+    <wsdl:part name="parameters" element="tns:TrafoEkleResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrafoSilSoapIn">
+    <wsdl:part name="parameters" element="tns:TrafoSil" />
+  </wsdl:message>
+  <wsdl:message name="TrafoSilSoapOut">
+    <wsdl:part name="parameters" element="tns:TrafoSilResponse" />
+  </wsdl:message>
+  <wsdl:message name="TrafoGuncelleSoapIn">
+    <wsdl:part name="parameters" element="tns:TrafoGuncelle" />
+  </wsdl:message>
+  <wsdl:message name="TrafoGuncelleSoapOut">
+    <wsdl:part name="parameters" element="tns:TrafoGuncelleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceRehber2Soap">
+    <wsdl:operation name="IsimAra">
+      <wsdl:input message="tns:IsimAraSoapIn" />
+      <wsdl:output message="tns:IsimAraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BolumAra">
+      <wsdl:input message="tns:BolumAraSoapIn" />
+      <wsdl:output message="tns:BolumAraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TrafoAra">
+      <wsdl:input message="tns:TrafoAraSoapIn" />
+      <wsdl:output message="tns:TrafoAraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VeriGoster">
+      <wsdl:input message="tns:VeriGosterSoapIn" />
+      <wsdl:output message="tns:VeriGosterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VeriGoster2">
+      <wsdl:input message="tns:VeriGoster2SoapIn" />
+      <wsdl:output message="tns:VeriGoster2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KisiEkle">
+      <wsdl:input message="tns:KisiEkleSoapIn" />
+      <wsdl:output message="tns:KisiEkleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KisiSil">
+      <wsdl:input message="tns:KisiSilSoapIn" />
+      <wsdl:output message="tns:KisiSilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KisiGuncelle">
+      <wsdl:input message="tns:KisiGuncelleSoapIn" />
+      <wsdl:output message="tns:KisiGuncelleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TrafoEkle">
+      <wsdl:input message="tns:TrafoEkleSoapIn" />
+      <wsdl:output message="tns:TrafoEkleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TrafoSil">
+      <wsdl:input message="tns:TrafoSilSoapIn" />
+      <wsdl:output message="tns:TrafoSilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TrafoGuncelle">
+      <wsdl:input message="tns:TrafoGuncelleSoapIn" />
+      <wsdl:output message="tns:TrafoGuncelleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceRehber2Soap" type="tns:WebServiceRehber2Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsimAra">
+      <soap:operation soapAction="http://tempuri.org/IsimAra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BolumAra">
+      <soap:operation soapAction="http://tempuri.org/BolumAra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrafoAra">
+      <soap:operation soapAction="http://tempuri.org/TrafoAra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VeriGoster">
+      <soap:operation soapAction="http://tempuri.org/VeriGoster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VeriGoster2">
+      <soap:operation soapAction="http://tempuri.org/VeriGoster2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KisiEkle">
+      <soap:operation soapAction="http://tempuri.org/KisiEkle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KisiSil">
+      <soap:operation soapAction="http://tempuri.org/KisiSil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KisiGuncelle">
+      <soap:operation soapAction="http://tempuri.org/KisiGuncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrafoEkle">
+      <soap:operation soapAction="http://tempuri.org/TrafoEkle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrafoSil">
+      <soap:operation soapAction="http://tempuri.org/TrafoSil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrafoGuncelle">
+      <soap:operation soapAction="http://tempuri.org/TrafoGuncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceRehber2Soap12" type="tns:WebServiceRehber2Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsimAra">
+      <soap12:operation soapAction="http://tempuri.org/IsimAra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BolumAra">
+      <soap12:operation soapAction="http://tempuri.org/BolumAra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrafoAra">
+      <soap12:operation soapAction="http://tempuri.org/TrafoAra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VeriGoster">
+      <soap12:operation soapAction="http://tempuri.org/VeriGoster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VeriGoster2">
+      <soap12:operation soapAction="http://tempuri.org/VeriGoster2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KisiEkle">
+      <soap12:operation soapAction="http://tempuri.org/KisiEkle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KisiSil">
+      <soap12:operation soapAction="http://tempuri.org/KisiSil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KisiGuncelle">
+      <soap12:operation soapAction="http://tempuri.org/KisiGuncelle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrafoEkle">
+      <soap12:operation soapAction="http://tempuri.org/TrafoEkle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrafoSil">
+      <soap12:operation soapAction="http://tempuri.org/TrafoSil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TrafoGuncelle">
+      <soap12:operation soapAction="http://tempuri.org/TrafoGuncelle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceRehber2">
+    <wsdl:port name="WebServiceRehber2Soap" binding="tns:WebServiceRehber2Soap">
+      <soap:address location="http://localhost:61143/WebServiceRehber2.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceRehber2Soap12" binding="tns:WebServiceRehber2Soap12">
+      <soap12:address location="http://localhost:61143/WebServiceRehber2.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
